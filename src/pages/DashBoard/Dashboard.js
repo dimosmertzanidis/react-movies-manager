@@ -7,7 +7,10 @@ import {useQuery} from 'react-query'
 
 const DashBoard = props => {
 
-    const {status, data } = useQuery("movies", () => getMovies())
+    const {status, data:movies } = useQuery("movies", () => getMovies());
+
+ 
+    
 
     return (
         <>

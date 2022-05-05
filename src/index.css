@@ -5,8 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #212121;
-  color: yellow;
 }
 
 code {
@@ -55,7 +53,7 @@ code {
 
 
 .d-md-block {
-  margin-top: 56px;
+  margin-top: 31px;
 }
 
 nav.navbar.navbar-expand-lg {
@@ -65,4 +63,5 @@ nav.navbar.navbar-expand-lg {
 
 a.navbar-brand {
   color: white !important;
+  text-decoration: none;
 }
