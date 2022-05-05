@@ -1,8 +1,18 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import getMovies from '../../api/movies';
 
-
-const DashBoard = () => (
-    <h1>DashBoard</h1>
-);
+const DashBoard = () => {
+    const [movies, setMovies] = useState([])
+    
+    useEffect(() => {
+        getMovies().then((data) => 
+            setMovies(data)
+        )
+      }, [])  
+    
+    return (
+    <h1>{movies}</h1>
+    );
+};
 
 export default DashBoard; 
