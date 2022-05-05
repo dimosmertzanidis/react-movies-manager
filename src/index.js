@@ -8,18 +8,22 @@ import Home from './pages/Home/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Error404 from './pages/Error404/Error404';
 import { Button } from 'reactstrap';
+import { QueryClient, QueryClientProvider} from "react-query"
+const queryClient = new QueryClient();
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <Routes>
-    <Route path={'/'} element={<Home />} />
-    <Route path={'/Dashboard'} element={<DashBoard />} />
-    <Route path={'*'} element={<Error404 />} />
-    </Routes>
-  </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+      <Routes>
+      <Route path={'/'} element={<Home />} />
+      <Route path={'/Dashboard'} element={<DashBoard />} />
+      <Route path={'*'} element={<Error404 />} />
+      </Routes>
+    </BrowserRouter>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

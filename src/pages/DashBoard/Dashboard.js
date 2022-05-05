@@ -1,17 +1,11 @@
 import React, {useEffect, useState} from "react";
-import getMovies from '../../api/movies';
+import {getMovies} from '../../api/movies';
+import {useQuery} from 'react-query'
 
 const DashBoard = () => {
-    const [movies, setMovies] = useState([])
-    
-    useEffect(() => {
-        getMovies().then((data) => 
-            setMovies(data)
-        )
-      }, [])  
-    
+    const {status, data } = useQuery("movies", () => getMovies())
     return (
-    <h1>{movies}</h1>
+    <h1></h1>
     );
 };
 

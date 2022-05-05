@@ -1,17 +1,11 @@
 import axios from 'axios';
 
-export const getMovies = async () => (
-    await axios.get('http://localhost:3001/movies')
-    .then(res => {
-     return res.data;}
-    )
-)
+export const getMovies = async () => {
+    const res = await axios.get("http://localhost:3001/movies");
+    return res.data
+}
 
-export const getMovie = (id) => (
-    axios.get('http://localhost:3001/movies/{id}')
-    .then(res => {
-     return res.data;}
-    )
-)
-
-export default getMovies;
+export const getMovie = async (id) => {
+    const res = await axios.get(`http://localhost:3001/movies/${id}`);
+    return res.data
+}
