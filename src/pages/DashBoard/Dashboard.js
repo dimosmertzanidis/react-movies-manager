@@ -1,10 +1,13 @@
-import {React, useEffect} from "react";
+import {React} from "react";
 import {Col, Container, Row, Navbar} from "react-bootstrap";
 import Sidebar from "../SideBar/SideBar";
+import {getMovies} from '../../api/movies';
+import {useQuery} from 'react-query'
+
 
 const DashBoard = props => {
 
-    useEffect( () => {});
+    const {status, data } = useQuery("movies", () => getMovies())
 
     return (
         <>
