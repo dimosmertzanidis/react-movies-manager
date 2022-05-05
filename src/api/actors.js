@@ -1,15 +1,11 @@
 import axios from 'axios';
 
-export const getActors = async () => (
-    await axios.get('http://localhost:3001/actors')
-    .then(res => {
-     return res.data;}
-    )
-)
+export const getActors = async () => {
+    const res = await axios.get("http://localhost:3001/actors");
+    return res.data
+}
 
-export const getMovie = async (id) => (
-    await axios.get(`http://localhost:3001/actors/${id}`)
-    .then(res => {
-     return res.data;}
-    )
-)
+export const getActor = async (id) => {
+    const res = await axios.get(`http://localhost:3001/actors/${id}`);
+    return res.data
+}

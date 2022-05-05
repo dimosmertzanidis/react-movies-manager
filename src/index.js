@@ -6,9 +6,9 @@ import DashBoard from './pages/DashBoard/Dashboard';
 import Home from './pages/Home/Home';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Error404 from './pages/Error404/Error404';
-import { QueryClient, QueryClientProvider} from "react-query"
+import { QueryClient, QueryClientProvider} from "react-query";
+import 'bootstrap/dist/css/bootstrap.min.css';
 const queryClient = new QueryClient();
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
