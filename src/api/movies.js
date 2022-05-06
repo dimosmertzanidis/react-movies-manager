@@ -11,4 +11,9 @@ export const getMovie = async ({queryKey}) => {
     return res.data
 }
 
+export const createMovie = async (movie) => {
+    const res = await axios.post(`http://localhost:3001/movies/`, movie);
+    return res.data
+}
+
 

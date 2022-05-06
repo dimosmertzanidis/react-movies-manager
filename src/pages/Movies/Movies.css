@@ -10,7 +10,7 @@
 
 .normal-text {
     color: black;
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 .normal-text:hover {
