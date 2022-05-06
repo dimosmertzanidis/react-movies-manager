@@ -15,7 +15,7 @@ const SideBar = props => {
                 <Nav.Link href="/Movies">Movies</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="/Movies">Add new movie</Nav.Link>
+                <Nav.Link href="/AddMovie">Add new movie</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link href="/Actors">Actors</Nav.Link>
