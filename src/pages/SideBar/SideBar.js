@@ -12,16 +12,16 @@ const SideBar = props => {
                 <Nav.Link href="/DashBoard">DashBoard</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="/Movies">Movies</Nav.Link>
+                <Nav.Link href="/Movies">Movies</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="/Movies">Add new movie</Nav.Link>
+                <Nav.Link href="/Movies">Add new movie</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="/Actors">Actors</Nav.Link>
+                <Nav.Link href="/Actors">Actors</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="/Actors">Add new actor</Nav.Link>
+                <Nav.Link href="/Actors">Add new actor</Nav.Link>
             </Nav.Item>
             </Nav>
           

@@ -19,7 +19,7 @@ root.render(
       <Routes>
       <Route path={'/'} element={<Home />} />
       <Route path={'/Dashboard'} element={<DashBoard />} />
-      <Route path={'/Dashboard'} element={<Movies />} />
+      <Route path={'/Movies'} element={<Movies />} />
       <Route path={'*'} element={<Error404 />} />
       </Routes>
     </BrowserRouter>
