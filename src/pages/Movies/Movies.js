@@ -36,12 +36,12 @@ const Movies = props => {
                     <div className="movies-cards">
                         Movies
                         {movies?.map(({ id, title, tagline, backdrop_path }) => (
-                        <Link to={`/movies/${id}`} className="normal-text">
+                        <Link to={`/movie/${id}`} className="normal-text">
                             <Card className="movie-card">
                                 <CardImg
                                 src={backdrop_path}
                                 top
-                                width="100%"
+                                width="100%"    
                                 />
                                 <CardBody>
                                 <CardTitle tag="h5">
