@@ -9,9 +9,6 @@ const DashBoard = props => {
 
     const {status, data:movies } = useQuery("movies", () => getMovies());
 
- 
-    
-
     return (
         <>
         <Navbar expand="lg">
