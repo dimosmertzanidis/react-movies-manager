@@ -17,3 +17,7 @@ export const createMovie = async (movie) => {
 }
 
 
+export const deleteMovie = async (movieId) => {
+    const res = await axios.delete(`http://localhost:3001/movies/${movieId}`);
+    return res.data
+}
