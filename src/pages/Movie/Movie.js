@@ -1,25 +1,32 @@
 import {React} from "react";
 import {Col, Container, Row, Navbar, Button} from "react-bootstrap";
 import Sidebar from "../SideBar/SideBar";
-import {getMovie} from '../../api/movies';
+import {getMovie, deleteMovie} from '../../api/movies';
 import {useQuery} from 'react-query'
 import { Table, Spinner } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 
 const Movie = () => {
 
     const movieId = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1)
     const { status, data: movie } = useQuery([ 'movie', movieId], getMovie);
+    const navigate = useNavigate();
 
-function editMovie(e) {
+const editMovie = (e) => {
     e.preventDefault();
     alert('edit');
-}
+};
 
-function deleteMovie(e) {
+const deleteMovies = async (e) => {
     e.preventDefault();
-}
+
+    await deleteMovie(movieId);
+    
+    navigate('/movies');
+    
+};
+
 
     return (
         <>
@@ -51,7 +58,7 @@ function deleteMovie(e) {
                                 ) : (
                                     <div>
                                     <Button variant="primary" onClick={editMovie}>Edit</Button>{' '}
-                                    <Button variant="danger" onClick={deleteMovie}>Delete</Button>{' '}
+                                    <Button variant="danger" onClick={deleteMovies}>Delete</Button>{' '}
                                     <h1>{movie.original_title}</h1>
                                     <h2>{movie.tagline}</h2>
                                     <h2>{movie.genres}</h2>
