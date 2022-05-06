@@ -5,7 +5,8 @@ export const getMovies = async () => {
     return res.data
 }
 
-export const getMovie = async (id) => {
-    const res = await axios.get(`http://localhost:3001/movies/${id}`);
+export const getMovie = async ({queryKey}) => {
+    const [_, movieId] = queryKey;
+    const res = await axios.get(`http://localhost:3001/movies/${movieId}`);
     return res.data
 }

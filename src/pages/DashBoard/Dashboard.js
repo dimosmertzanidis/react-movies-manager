@@ -56,7 +56,7 @@ const DashBoard = props => {
                 <td>{title}</td>
                 <td>{release_date}</td>
                 <td>
-                  <Link to={`/movies/${id}`}>View movie</Link>
+                  <Link to={`/movie/${id}`}>View movie</Link>
                 </td>
               </tr>
             ))

@@ -4,6 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import DashBoard from './pages/Dashboard/Dashboard';
 import Movies from './pages/Movies/Movies';
+import Movie from './pages/Movie/Movie';
 import Home from './pages/Home/Home';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Error404 from './pages/Error404/Error404';
@@ -19,7 +20,8 @@ root.render(
       <Routes>
       <Route path={'/'} element={<Home />} />
       <Route path={'/Dashboard'} element={<DashBoard />} />
-      <Route path={'/Dashboard'} element={<Movies />} />
+      <Route path={'/Movies'} element={<Movies />} />
+      <Route path="/Movie/:movieId" element={<Movie />} />
       <Route path={'*'} element={<Error404 />} />
       </Routes>
     </BrowserRouter>
