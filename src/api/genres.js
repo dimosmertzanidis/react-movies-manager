@@ -1,15 +1,11 @@
 import axios from 'axios';
 
-export const getGenres = async () => (
-    await axios.get('http://localhost:3001/genres')
-    .then(res => {
-     return res.data;}
-    )
-)
+export const getGenres = async () => {
+    const res = await axios.get("http://localhost:3001/genres");
+    return res.data
+}
 
-export const getGenre = async (id) => (
-    await axios.get(`http://localhost:3001/genres/${id}`)
-    .then(res => {
-     return res.data;}
-    )
-)
+export const getGenre = async (id) => {
+    const res = await axios.get(`http://localhost:3001/genres/${id}`);
+    return res.data
+}

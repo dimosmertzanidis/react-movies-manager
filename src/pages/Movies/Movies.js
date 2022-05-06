@@ -1,12 +1,13 @@
 import {React} from "react";
 import {Col, Container, Row, Navbar} from "react-bootstrap";
+import {Card, CardBody, CardTitle, CardSubtitle, CardImg} from "reactstrap"
 import Sidebar from "../SideBar/SideBar";
 import {getMovies} from '../../api/movies';
 import {useQuery} from 'react-query'
-import { Table, Spinner } from "reactstrap";
 import { Link } from "react-router-dom";
+import './Movies.css' 
 
-const DashBoard = props => {
+const Movies = props => {
 
     const { status, data: movies } = useQuery("movies", getMovies);
 
@@ -32,35 +33,28 @@ const DashBoard = props => {
                       <Sidebar />
                     </Col>
                     <Col  className="col-md-10" >
-                    <div>
-      <h1>Dashboard</h1>
-      <Table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Release Date</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {status === "loading" ? (
-            <Spinner>Loading...</Spinner>
-          ) : (
-            movies?.map(({ id, title, release_date }) => (
-              <tr key={id}>
-                <th scope="row">{id}</th>
-                <td>{title}</td>
-                <td>{release_date}</td>
-                <td>
-                  <Link to={`/movies/${id}`}>View movie</Link>
-                </td>
-              </tr>
-            ))
-          )}
-        </tbody>
-      </Table>
-    </div>
+                    <div className="movies-cards">
+                        Movies
+                        {movies?.map(({ id, title, tagline, backdrop_path }) => (
+                        <Link to={`/movies/${id}`} className="normal-text">
+                            <Card className="movie-card">
+                                <CardImg
+                                src={backdrop_path}
+                                top
+                                width="100%"
+                                />
+                                <CardBody>
+                                <CardTitle tag="h5">
+                                    {title}
+                                </CardTitle>
+                                <CardSubtitle className="mb-2 text-muted" tag="h6">
+                                    {tagline}
+                                </CardSubtitle>
+                                </CardBody>
+                            </Card>
+                        </Link>
+                        ))}
+                    </div>
                     </Col> 
                 </Row>
 
@@ -69,4 +63,4 @@ const DashBoard = props => {
         );
     };
 
-export default DashBoard; 
+export default Movies; 

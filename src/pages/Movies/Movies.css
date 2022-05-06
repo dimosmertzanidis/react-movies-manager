@@ -1,0 +1,19 @@
+/* .movies-cards {
+    display:flex;
+    flex-wrap: wrap;
+} */
+
+/* .movie-card {
+    flex: 1 0 21%;
+    margin: 5px;
+} */
+
+.normal-text {
+    color: black;
+    text-decoration: none;
+}
+
+.normal-text:hover {
+    color: black;
+    text-decoration: none;
+}

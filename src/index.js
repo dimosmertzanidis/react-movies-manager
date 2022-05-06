@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import DashBoard from './pages/DashBoard/Dashboard';
+import DashBoard from './pages/Dashboard/Dashboard';
+import Movies from './pages/Movies/Movies';
 import Home from './pages/Home/Home';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Error404 from './pages/Error404/Error404';
-import { Button } from 'reactstrap';
-import { QueryClient, QueryClientProvider} from "react-query"
+import { QueryClient, QueryClientProvider} from "react-query";
+import 'bootstrap/dist/css/bootstrap.min.css';
 const queryClient = new QueryClient();
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +19,7 @@ root.render(
       <Routes>
       <Route path={'/'} element={<Home />} />
       <Route path={'/Dashboard'} element={<DashBoard />} />
+      <Route path={'/Movies'} element={<Movies />} />
       <Route path={'*'} element={<Error404 />} />
       </Routes>
     </BrowserRouter>
